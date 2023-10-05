@@ -1,0 +1,39 @@
+.conteiner-loading{
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.conteiner-loading h2{
+    font-family:'Courier New', Courier, monospace;
+    font-size: 50px;
+    color: #fff;
+    -webkit-text-stroke: 1px rgb(179, 179, 179);
+    position: relative
+}
+
+.conteiner-loading h2::before{
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 0%;
+    -webkit-text-stroke: 1px #fff;
+    color: #FF6666;
+    overflow: hidden;
+    border-right: 2px solid #FF6666;
+
+    animation: animate1 5s  infinite;
+}
+
+@keyframes animate1{
+    0%,100%{
+        width: 0%;
+    }
+
+    50%{
+        width: 100%;
+    }
+}
